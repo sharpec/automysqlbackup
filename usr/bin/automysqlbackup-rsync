@@ -1,5 +1,5 @@
-$source = /var/backup/
-$user = root
-$host = 192.168.18.241
-$destination = /var/lib/nethserver/ibay/backup/db/
+source=/var/backup/
+user="root"
+host="192.168.18.241"
+destination=/var/lib/nethserver/ibay/backup/db/
 rsync --verbose --log-file="/var/log/rsync.log" --recursive --times --compress --archive --delete --partial -e "ssh -T -c arcfour -o Compression=no -x" '$source' $user@$host:$destination
